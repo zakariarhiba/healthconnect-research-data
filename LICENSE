@@ -1,0 +1,74 @@
+MIT License
+
+Copyright (c) 2026 RHIBA Zakaria
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+ADDITIONAL TERMS FOR ACADEMIC RESEARCH USE
+
+This repository contains research data from a Master's thesis and is intended
+primarily for:
+
+1. Academic research and education
+2. Literature review and citations
+3. Data analysis and validation
+4. Benchmarking comparisons
+
+NOTICE REGARDING IMPLEMENTATION CODE:
+This repository contains RESEARCH DATA ONLY. It does NOT include the complete
+implementation source code (Kafka applications, Spark jobs, MongoDB schemas,
+Flask APIs, etc.).
+
+For access to the complete implementation code, deployment guides, or technical
+support, please contact:
+
+    RHIBA Zakaria
+    Email: zakariarhiba21@gmail.com
+    Institution: ENSAM - Université Hassan II Casablanca
+    Program: Master's in Digital Engineering for Health (IDMS)
+
+CITATION:
+If you use this research data in your work, please cite:
+
+    Zakaria, R. (2026). HealthConnect: Comparative Analysis and Selection of
+    Optimal Architecture for Secure Real-Time Telemedicine Data Integration.
+    Master's Thesis, ENSAM - Université Hassan II Casablanca.
+
+DISCLAIMER FOR MEDICAL USE:
+This is RESEARCH DATA from a simulation study. The data and configurations
+provided are for academic purposes only and should NOT be used directly in
+production medical systems without proper validation, clinical trials, and
+regulatory approval (e.g., FDA 510(k), CE marking, etc.).
+
+Healthcare providers implementing telemedicine systems based on this research
+must ensure compliance with:
+- HIPAA (Health Insurance Portability and Accountability Act)
+- GDPR (General Data Protection Regulation)
+- IEC 60601 (Medical Electrical Equipment Standards)
+- Local healthcare regulations and standards
+
+NO WARRANTY FOR MEDICAL USE:
+The authors provide NO WARRANTY that this data or the architectures described
+are suitable for medical use. Healthcare implementations require extensive
+validation, risk assessment, and regulatory approval beyond the scope of this
+research.
+
+For commercial use or production deployment guidance, contact the author.

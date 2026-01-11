@@ -1,0 +1,143 @@
+# HealthConnect Research Data Repository - .gitignore
+
+# System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Logs
+*.log
+logs/
+*.out
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# Large Data Files (if full 43.2M dataset is generated)
+# Uncomment if you generate the full dataset locally
+# SIMULATION_RESULTS_FULL.csv
+
+# Compressed Archives
+*.zip
+*.tar.gz
+*.tar.bz2
+*.7z
+*.rar
+
+# Database Files
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment Variables
+.env.local
+.env.*.local
+secrets.txt
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+desktop.ini
+
+# Linux
+.directory
+
+# Analysis Output (keep source data, ignore derived outputs)
+*.pkl
+*.pickle
+*.npy
+*.npz
+
+# R and Statistical Software
+.Rhistory
+.RData
+.Rproj.user
+
+# Excel temporary files
+~$*.xlsx
+~$*.xls
+
+# Backup files from editors
+*~
+*.orig
+
+# Node modules (if any JavaScript tools are used)
+node_modules/
+
+# Terraform (if infrastructure as code is added)
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Docker (if containerization is added)
+docker-compose.override.yml
+
+# Keep these files (explicitly tracked)
+!README.md
+!LICENSE
+!.gitignore
+!TEST_CONFIGURATION.md
+!SIMULATION_RESULTS_SAMPLE.csv
+!RESULTS/*.csv
+!CONFIGURATIONS/*.txt
+!ANALYSIS/*.txt

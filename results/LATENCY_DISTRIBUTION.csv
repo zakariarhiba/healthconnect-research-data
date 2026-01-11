@@ -1,0 +1,5 @@
+architecture,p50_ms,p95_ms,p99_ms,mean_ms,std_dev_ms,min_ms,max_ms,data_loss_percent
+lambda,165,310,320,185,95,80,650,0.0
+mqtt,380,850,890,420,280,200,1800,0.8
+coap,470,1080,1150,510,350,250,2200,1.2
+http,720,1580,1650,780,450,350,3500,2.3

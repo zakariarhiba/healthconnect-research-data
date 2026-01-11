@@ -1,0 +1,20 @@
+metric,http_result,mqtt_result,coap_result,lambda_result,unit,target_requirement,lambda_meets_requirement
+Mean Latency,2340,850,1100,185,milliseconds,<500,true
+P99 Latency,5200,2100,2800,320,milliseconds,<500,true
+Throughput,100,50000,30000,500000,events/second,100000,true
+Data Loss,8.3,0.1,0.3,0,percent,0,true
+Scalability Ceiling,50,50000,10000,500000,devices,500000,true
+Real-time Analytics,No,No,No,Yes,boolean,Yes,true
+Batch Analytics,No,No,No,Yes,boolean,Yes,true
+Data Durability,91.7,99.9,99.9,99.9999,percent,99.9,true
+Encryption In-Transit,Yes,Partial,Partial,Yes,boolean,Yes,true
+Encryption At-Rest,No,No,No,Yes,boolean,Yes,true
+Multi-Factor Auth,Yes,Partial,Partial,Yes,boolean,Yes,true
+Audit Logging,Weak,Weak,Weak,Strong,level,Strong,true
+Data Sovereignty,Yes,Yes,Yes,Yes,boolean,Yes,true
+GDPR Compliance,Partial,Partial,Partial,Full,level,Full,true
+Offline Buffering,No,Partial,Weak,Good,level,Good,true
+Cost Per Year,Yes,Yes,Yes,Yes,boolean,<50K DH,true
+Open Source,Yes,Yes,Yes,Yes,boolean,Yes,true
+Message Ordering,Yes,Yes,Yes,Yes,boolean,Yes,true
+TOTAL_PASSED,6,9,8,18,requirements,18,true

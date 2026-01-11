@@ -1,0 +1,5 @@
+architecture,cpu_usage_percent,memory_usage_mb,network_throughput_mbps,disk_io_mbps,throughput_events_per_sec
+lambda,68,8200,450,180,500000
+mqtt,42,2800,180,45,50000
+coap,38,2200,150,38,30000
+http,25,1500,80,20,1000

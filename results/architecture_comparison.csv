@@ -1,0 +1,19 @@
+requirement_id,requirement_name,lambda,mqtt,coap,http,unit,priority
+1,Real-time Latency,PASS,PASS,FAIL,FAIL,<500ms,Critical
+2,Data Durability,PASS,PASS,PASS,FAIL,99.9%,Critical
+3,Throughput,PASS,PASS,PASS,FAIL,>100K events/s,High
+4,Scalability,PASS,PASS,FAIL,FAIL,>500K devices,Critical
+5,Zero Data Loss,PASS,FAIL,FAIL,FAIL,0% loss,Critical
+6,Real-time Analytics,PASS,FAIL,FAIL,FAIL,Yes/No,High
+7,Batch Analytics,PASS,FAIL,FAIL,FAIL,Yes/No,High
+8,Historical Queries,PASS,FAIL,FAIL,FAIL,Yes/No,Medium
+9,Fault Tolerance,PASS,PASS,PASS,FAIL,Yes/No,Critical
+10,Auto Scaling,PASS,PASS,FAIL,FAIL,Yes/No,High
+11,Security (TLS),PASS,PASS,PASS,PASS,Yes/No,Critical
+12,Authentication,PASS,PASS,PASS,PASS,Yes/No,Critical
+13,Multi-tenant,PASS,FAIL,FAIL,FAIL,Yes/No,Medium
+14,Complex Queries,PASS,FAIL,FAIL,FAIL,Yes/No,Medium
+15,Anomaly Detection,PASS,FAIL,FAIL,FAIL,<200ms,Critical
+16,Cost Efficiency,PASS,PASS,PASS,PASS,Moderate,Medium
+17,Operational Simplicity,FAIL,PASS,PASS,PASS,Simple,Low
+18,Cloud Native,PASS,PASS,FAIL,PASS,Yes/No,Medium

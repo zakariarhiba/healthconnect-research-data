@@ -1,0 +1,131 @@
+=================================================================
+HEALTHCONNECT TEST ENVIRONMENT SPECIFICATIONS
+=================================================================
+
+Date: January 11, 2026
+Test Duration: 12 hours continuous
+Total Events Generated: 43,200,000
+Patients Simulated: 100
+Sampling Rate: 10 Hz (100ms intervals)
+
+=================================================================
+HARDWARE SPECIFICATIONS
+=================================================================
+
+IoT Simulators:
+- Device: Raspberry Pi 4 Model B
+- CPU: Broadcom BCM2711, Quad-core Cortex-A72 (ARM v8) 64-bit @ 1.5GHz
+- RAM: 4GB LPDDR4-3200 SDRAM
+- Storage: 32GB microSD Class 10
+- Network: 802.11ac WiFi (2.4GHz/5GHz dual-band)
+- Quantity: 10 devices (simulating 100 patients each = 1000 total)
+
+Server Infrastructure:
+- Platform: Ubuntu 20.04 LTS (64-bit)
+- CPU: Intel Xeon E5-2680 v4, 8-core @ 2.4GHz (16 threads)
+- RAM: 16GB DDR4-2400 ECC
+- Storage: 512GB NVMe SSD (Read: 3500MB/s, Write: 2500MB/s)
+- Network: 1Gbps Ethernet
+- Quantity: 3 nodes (Kafka cluster)
+
+Database Server:
+- Platform: Ubuntu 20.04 LTS
+- CPU: Intel Xeon E5-2680 v4, 8-core @ 2.4GHz
+- RAM: 32GB DDR4-2400
+- Storage: 1TB NVMe SSD
+- Database: MongoDB 5.0.3 (WiredTiger storage engine)
+
+Spark Cluster:
+- Master Node: 8-core, 16GB RAM
+- Worker Nodes: 3 nodes × (8-core, 16GB RAM)
+- Total Executors: 12
+
+=================================================================
+NETWORK CONFIGURATION
+=================================================================
+
+WiFi Network:
+- Standard: IEEE 802.11ac (5GHz band)
+- Channel Width: 80MHz
+- Signal Strength: -45 to -55 dBm (excellent)
+- RTT Latency: 5-10ms
+- Packet Loss: <0.1%
+
+Wired Network (Server-to-Server):
+- Connection: 1Gbps Ethernet
+- Switch: Managed Gigabit Switch (24-port)
+- RTT Latency: <1ms
+- Packet Loss: 0%
+
+Internet Simulation:
+- Bandwidth: 100Mbps symmetric
+- Latency: +20ms artificial delay (simulating cloud)
+- Jitter: ±5ms
+
+=================================================================
+SOFTWARE VERSIONS
+=================================================================
+
+Lambda Architecture Components:
+- Apache Kafka: 3.3.1
+- Apache Spark: 3.3.0
+- Hadoop HDFS: 3.3.1
+- MongoDB: 5.0.3
+- Python: 3.9.7
+- Flask: 2.0.2
+
+Alternative Architectures:
+- Mosquitto MQTT Broker: 2.0.15
+- CoAP Server: aiocoap 0.4.3
+- Nginx HTTP Server: 1.21.4
+
+Monitoring Tools:
+- Prometheus: 2.37.0
+- Grafana: 9.0.5
+- Elasticsearch: 7.17.0 (for log analysis)
+
+=================================================================
+TEST PARAMETERS
+=================================================================
+
+Sustained Load:
+- Events per second: 1,000 (100 patients × 10Hz)
+- Peak load tested: 5,000 events/second (burst test)
+- Test duration: 43,200 seconds (12 hours)
+
+Data Characteristics:
+- Message size: ~150 bytes per event (JSON format)
+- Total data volume: ~6.5GB over 12 hours
+- Compression: Snappy (Kafka)
+
+Anomaly Injection:
+- Total anomalies: 2,160,000 (5% of 43.2M)
+- Tachycardia events: 734,400 (1.7%)
+- Hypoxia events: 734,400 (1.7%)
+- Fever events: 734,400 (1.7%)
+
+=================================================================
+MONITORING & OBSERVABILITY
+=================================================================
+
+Metrics Collected:
+- End-to-end latency (producer to consumer)
+- Kafka broker metrics (throughput, lag, partition health)
+- Spark Streaming metrics (batch processing time, records/sec)
+- MongoDB metrics (insert rate, query latency)
+- System metrics (CPU, memory, disk I/O, network)
+
+Sampling Rate:
+- System metrics: Every 10 seconds
+- Application metrics: Every event
+- Aggregated statistics: Every 1 minute
+
+Health Checks:
+- Kafka: ZooKeeper quorum, broker availability
+- Spark: Executor health, job status
+- MongoDB: Replica set status, oplog lag
+- Network: Ping tests, bandwidth tests
+
+=================================================================
+END OF SPECIFICATIONS
+=================================================================
