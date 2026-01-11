@@ -1,14 +1,14 @@
-=================================================================
+########################################
 APACHE SPARK STREAMING CONFIGURATION - HEALTHCONNECT
-=================================================================
+########################################
 
 Spark Version: 3.3.0
 Deployment Mode: Standalone Cluster
 Python Version: 3.9.7 (PySpark)
 
-=================================================================
+########################################
 CLUSTER CONFIGURATION
-=================================================================
+########################################
 
 Master Node:
 - Cores: 8
@@ -21,9 +21,9 @@ Worker Nodes (3 nodes):
 - Total worker cores: 24
 - Total worker memory: 48GB
 
-=================================================================
+########################################
 SPARK APPLICATION CONFIGURATION
-=================================================================
+########################################
 
 spark.app.name=HealthConnect-RealTime-Processing
 spark.master=spark://master:7077
@@ -43,9 +43,9 @@ spark.executor.memoryOverhead=1g
 spark.memory.fraction=0.8
 spark.memory.storageFraction=0.3
 
-=================================================================
+########################################
 STREAMING CONFIGURATION
-=================================================================
+########################################
 
 # Batch Interval (Speed Layer Target: <200ms)
 spark.streaming.batchDuration=500ms
@@ -63,9 +63,9 @@ spark.streaming.checkpoint.interval=10s
 spark.streaming.window.duration=60s
 spark.streaming.slide.duration=10s
 
-=================================================================
+########################################
 KAFKA INTEGRATION
-=================================================================
+########################################
 
 # Kafka Consumer Properties
 spark.kafka.bootstrap.servers=kafka-broker-0:9092,kafka-broker-1:9092,kafka-broker-2:9092
@@ -80,9 +80,9 @@ spark.kafka.subscribe=vital-signs-raw
 spark.streaming.kafka.consumer.poll.ms=512
 spark.default.parallelism=6
 
-=================================================================
+########################################
 MONGODB INTEGRATION
-=================================================================
+########################################
 
 # MongoDB Connection (for Speed Layer writes)
 spark.mongodb.output.uri=mongodb://mongodb-0:27017,mongodb-1:27017,mongodb-2:27017/healthconnect?replicaSet=rs0
@@ -93,9 +93,9 @@ spark.mongodb.output.collection=vital_signs_realtime
 spark.mongodb.output.writeConcern.w=majority
 spark.mongodb.output.writeConcern.journal=true
 
-=================================================================
+########################################
 HDFS INTEGRATION (Batch Layer)
-=================================================================
+########################################
 
 # HDFS for historical data
 spark.hadoop.fs.defaultFS=hdfs://namenode:9000
@@ -111,9 +111,9 @@ spark.sql.parquet.compression.codec=snappy
 spark.sql.parquet.mergeSchema=false
 spark.sql.parquet.filterPushdown=true
 
-=================================================================
+########################################
 PERFORMANCE TUNING
-=================================================================
+########################################
 
 # Shuffle Configuration
 spark.shuffle.service.enabled=true
@@ -135,9 +135,9 @@ spark.dynamicAllocation.enabled=false
 # Speculation
 spark.speculation=false
 
-=================================================================
+########################################
 ANOMALY DETECTION ALGORITHM
-=================================================================
+########################################
 
 # Threshold-based Detection (implemented in Spark job)
 Tachycardia Threshold: heart_rate > 120 bpm
@@ -148,9 +148,9 @@ Fever Threshold: temperature > 39.0 C
 alert.kafka.topic=anomaly-alerts
 alert.kafka.bootstrap.servers=kafka-broker-0:9092,kafka-broker-1:9092,kafka-broker-2:9092
 
-=================================================================
+########################################
 WINDOWED AGGREGATIONS
-=================================================================
+########################################
 
 # Patient-level aggregations (1-minute windows)
 aggregation.window.duration=60s
@@ -163,9 +163,9 @@ Metrics Computed:
 - Anomaly count (1-min window)
 - Alert frequency
 
-=================================================================
+########################################
 MONITORING & METRICS
-=================================================================
+########################################
 
 # Spark UI
 spark.ui.enabled=true
@@ -184,9 +184,9 @@ Key Metrics Tracked:
 - Total delay (scheduling + processing)
 - Number of active batches
 
-=================================================================
+########################################
 FAULT TOLERANCE
-=================================================================
+########################################
 
 # Checkpointing for stateful operations
 Checkpoint Interval: 10 seconds
@@ -200,9 +200,9 @@ spark.streaming.driver.writeAheadLog.closeFileAfterWrite=true
 spark.task.maxFailures=4
 spark.stage.maxConsecutiveAttempts=4
 
-=================================================================
+########################################
 PERFORMANCE RESULTS
-=================================================================
+########################################
 
 Speed Layer Performance:
 - Batch Processing Time: 150-180ms (target: <200ms)
@@ -220,6 +220,6 @@ Resource Utilization:
 
 Zero Data Loss: Yes (checkpointing + WAL)
 
-=================================================================
+########################################
 END OF SPARK CONFIGURATION
-=================================================================
+########################################

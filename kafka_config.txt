@@ -1,9 +1,9 @@
-================================================================================
+########################################
 KAFKA 3-NODE CLUSTER CONFIGURATION
-================================================================================
+########################################
 
 BROKER CONFIGURATION (All 3 Brokers)
-================================================================================
+########################################
 
 # Broker Identity
 broker.id=1                                    # Set to 1, 2, 3 for each broker
@@ -56,10 +56,10 @@ zookeeper.connection.timeout.ms=18000
 -XX:MaxGCPauseMillis=20
 -XX:InitiatingHeapOccupancyPercent=35
 
-================================================================================
+########################################
 
 TOPIC CONFIGURATION: hospital-data
-================================================================================
+########################################
 
 Topic Name: hospital-data
 Partitions: 3
@@ -87,10 +87,10 @@ Partition Details:
 - Partition 1: Leader=kafka-2, Replicas=[kafka-2,kafka-3,kafka-1], Isr=[kafka-2,kafka-3,kafka-1]
 - Partition 2: Leader=kafka-3, Replicas=[kafka-3,kafka-1,kafka-2], Isr=[kafka-3,kafka-1,kafka-2]
 
-================================================================================
+########################################
 
 PRODUCER CONFIGURATION
-================================================================================
+########################################
 
 # Connection
 bootstrap.servers=kafka-1:9092,kafka-2:9092,kafka-3:9092
@@ -121,10 +121,10 @@ properties = {
     "linger.ms": 10
 }
 
-================================================================================
+########################################
 
 CONSUMER CONFIGURATION
-================================================================================
+########################################
 
 # Group
 group.id=healthconnect-streaming              # Consumer group
@@ -151,10 +151,10 @@ Consumer Group Status:
 - Topics: hospital-data
 - Current Offsets: Lag monitored
 
-================================================================================
+########################################
 
 PERFORMANCE TUNING
-================================================================================
+########################################
 
 Throughput Optimization:
 1. Increase num.io.threads to 16 (if CPU allows)
@@ -180,10 +180,10 @@ Disk Usage:
 - Replication factor 3: ~19.5 GB total
 - 7-day retention: ~19.5 GB (rotates daily)
 
-================================================================================
+########################################
 
 MONITORING & HEALTH CHECKS
-================================================================================
+########################################
 
 Key Metrics:
 - Under-replicated partitions: Should be 0
@@ -212,10 +212,10 @@ export KAFKA_OPTS="-Dcom.sun.management.jmxremote \
   -Dcom.sun.management.jmxremote.authenticate=false \
   -Dcom.sun.management.jmxremote.ssl=false"
 
-================================================================================
+########################################
 
 TROUBLESHOOTING
-================================================================================
+########################################
 
 Issue: High latency (>500ms)
 Solution:
@@ -238,10 +238,10 @@ Solution:
 3. Check consumer processing time
 4. Monitor Spark executor resources
 
-================================================================================
+########################################
 
 KAFKA CLUSTER HEALTH CHECKS
-================================================================================
+########################################
 
 Every 5 minutes:
 ✓ Broker connectivity (all 3 online)
@@ -262,10 +262,10 @@ Every day:
 ✓ Producer success rate >99.9%
 ✓ Consumer group stability
 
-================================================================================
+########################################
 
 VERSION: Kafka 3.2.0
 CLUSTER SIZE: 3 brokers
 TEST DATE: January 11, 2026
 STATUS: VALIDATED & TESTED
-================================================================================
+########################################

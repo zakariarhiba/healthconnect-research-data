@@ -1,9 +1,9 @@
-================================================================================
+########################################
 STATISTICAL ANALYSIS - HEALTHCONNECT RESEARCH DATA
-================================================================================
+########################################
 
 DATA SUMMARY
-================================================================================
+########################################
 
 Total Events Analyzed: 43,200,000
 Test Duration: 12 hours continuous
@@ -17,10 +17,10 @@ Data Quality:
 - Data Integrity: 100%
 - Processing Completeness: 100%
 
-================================================================================
+########################################
 
 LATENCY ANALYSIS (End-to-End Milliseconds)
-================================================================================
+########################################
 
 Architecture: HTTP
 - Sample Size: 1,000,000 latencies
@@ -60,7 +60,7 @@ Architecture: CoAP + WebSocket + WebRTC
 
 Architecture: Lambda (Kafka + Spark + MongoDB)
 - Sample Size: 1,000,000 latencies
-- Mean: 185 ms ⭐ BEST
+- Mean: 185 ms BEST
 - Median: 165 ms
 - Std Dev: 95 ms
 - Min: 80 ms
@@ -70,10 +70,10 @@ Architecture: Lambda (Kafka + Spark + MongoDB)
 - p99: 320 ms
 - 95% Confidence Interval: [175, 195] ms
 
-================================================================================
+########################################
 
 STATISTICAL SIGNIFICANCE TESTING
-================================================================================
+########################################
 
 Hypothesis Test: One-Way ANOVA
 
@@ -89,10 +89,10 @@ The differences in latency between architectures are HIGHLY STATISTICALLY
 SIGNIFICANT (p < 0.001). This is not due to chance but represents real,
 fundamental differences in architecture performance.
 
-================================================================================
+########################################
 
 POST-HOC ANALYSIS: TUKEY HONESTLY SIGNIFICANT DIFFERENCE (HSD)
-================================================================================
+########################################
 
 Pairwise Comparisons (Family-wise α = 0.05):
 
@@ -134,10 +134,10 @@ Pairwise Comparisons (Family-wise α = 0.05):
 
 *** p < 0.001 (highly significant)
 
-================================================================================
+########################################
 
 NORMALITY TESTING
-================================================================================
+########################################
 
 Shapiro-Wilk Test (Testing if latencies follow Normal Distribution):
 
@@ -168,10 +168,10 @@ Architecture: Lambda
 Note: With sample size n=1,000,000, ANOVA is robust to non-normality
 per Central Limit Theorem.
 
-================================================================================
+########################################
 
 VARIANCE ANALYSIS
-================================================================================
+########################################
 
 Levene's Test (Testing Equality of Variances):
 - Test Statistic: 45,230.5
@@ -183,10 +183,10 @@ Implications:
 - HTTP has highest variance (890 ms) → unpredictable performance
 - For clinical applications, predictability is as important as speed
 
-================================================================================
+########################################
 
 EFFECT SIZE & PRACTICAL SIGNIFICANCE
-================================================================================
+########################################
 
 Cohen's d (Standardized Mean Difference):
 
@@ -202,10 +202,10 @@ All pairwise comparisons showed large effect sizes (d > 0.4),
 indicating the differences are not just statistically significant
 but CLINICALLY MEANINGFUL.
 
-================================================================================
+########################################
 
 CONFIDENCE INTERVALS INTERPRETATION
-================================================================================
+########################################
 
 95% Confidence Intervals for Mean Latency:
 
@@ -220,10 +220,10 @@ Interpretation:
 - There is virtually NO OVERLAP in confidence intervals
 - Each architecture is statistically distinct from others
 
-================================================================================
+########################################
 
 DATA LOSS ANALYSIS
-================================================================================
+########################################
 
 Architecture: HTTP
 - Events Sent: 1,000,000
@@ -249,10 +249,10 @@ Architecture: Lambda
 - Data Loss: 0% (zero lost)
 - PERFECT for healthcare ✓
 
-================================================================================
+########################################
 
 ANOMALY INJECTION VALIDATION
-================================================================================
+########################################
 
 Target Anomaly Rate: 5%
 Actual Anomaly Rate: 4.98%
@@ -278,10 +278,10 @@ Anomaly Distribution across Architectures:
 - No systematic bias in anomaly injection
 - All anomalies properly detected and logged
 
-================================================================================
+########################################
 
 CORRELATION ANALYSIS
-================================================================================
+########################################
 
 Correlation between Latency and CPU Utilization:
 - Pearson r: 0.78 (strong positive correlation)
@@ -298,10 +298,10 @@ Correlation between Temperature and Heart Rate Anomalies:
 - P-Value: 0.042
 - Interpretation: Some co-occurrence of vital sign anomalies
 
-================================================================================
+########################################
 
 PERCENTILE-BASED ANALYSIS
-================================================================================
+########################################
 
 Lambda Architecture Latency Percentiles:
 - p1: 95 ms
@@ -321,10 +321,10 @@ Clinical Interpretation:
 - Maximum observed latency: 650 ms (still acceptable)
 - Very predictable and reliable performance
 
-================================================================================
+########################################
 
 SUMMARY & CONCLUSIONS
-================================================================================
+########################################
 
 Statistical Evidence:
 
@@ -352,9 +352,9 @@ Statistical Evidence:
 Statistical Confidence Level: 99.9% (p < 0.001)
 Recommendation: LAMBDA ARCHITECTURE STRONGLY SUPPORTED BY DATA
 
-================================================================================
+########################################
 
 VERSION: 1.0
 ANALYSIS DATE: January 11, 2026
 STATISTICAL PACKAGE: SciPy 1.7.0
-================================================================================
+########################################

@@ -1,14 +1,14 @@
-=================================================================
+########################################
 HEALTHCONNECT TEST PARAMETERS
-=================================================================
+########################################
 
 Test Date: January 11, 2026
 Test ID: HC-SIM-20260111-001
 Randomization Seed: 42 (for reproducibility)
 
-=================================================================
+########################################
 TEST DURATION & SCALE
-=================================================================
+########################################
 
 Total Duration: 12 hours (43,200 seconds)
 Start Time: 2026-01-11T00:00:00Z
@@ -21,9 +21,9 @@ Total Events Generated: 43,200,000
 Sustained Load: 1,000 events/second
 Peak Load (Burst Test): 5,000 events/second (tested for 5 minutes)
 
-=================================================================
+########################################
 VITAL SIGNS DISTRIBUTIONS
-=================================================================
+########################################
 
 All vital signs follow Normal (Gaussian) distributions with realistic
 clinical parameters.
@@ -49,9 +49,9 @@ TEMPERATURE
 - Critical Threshold: >39.0 (Fever)
 - Note: Core body temperature
 
-=================================================================
+########################################
 ANOMALY INJECTION STRATEGY
-=================================================================
+########################################
 
 Total Anomaly Rate: 5% of all events
 Total Anomalies: 2,160,000 out of 43,200,000
@@ -85,9 +85,9 @@ Anomaly Distribution:
 - Temporal distribution: Uniform random throughout 12 hours
 - Independence: Anomalies are independent across patients
 
-=================================================================
+########################################
 MESSAGE FORMAT
-=================================================================
+########################################
 
 Each event contains the following fields:
 
@@ -109,9 +109,9 @@ Message Size: ~150 bytes (JSON, uncompressed)
 Total Data Volume: ~6.5 GB over 12 hours
 Compressed Size: ~2.8 GB (Snappy compression, 57% reduction)
 
-=================================================================
+########################################
 NETWORK SIMULATION PARAMETERS
-=================================================================
+########################################
 
 IoT Device to Server:
 - Network: WiFi 802.11ac (5 GHz)
@@ -124,9 +124,9 @@ Server to Cloud (Simulated):
 - Jitter: ±5ms
 - Bandwidth: 100 Mbps symmetric
 
-=================================================================
+########################################
 LATENCY TARGET BREAKDOWN
-=================================================================
+########################################
 
 Lambda Architecture End-to-End Latency Target: <200ms
 
@@ -140,9 +140,9 @@ Component Breakdown:
 Total Expected: 180-233ms
 Achieved: 185ms (mean), 320ms (P99)
 
-=================================================================
+########################################
 FAILURE INJECTION (Chaos Engineering)
-=================================================================
+########################################
 
 To test fault tolerance, the following failures were injected:
 
@@ -164,9 +164,9 @@ To test fault tolerance, the following failures were injected:
 Total Downtime: 1 minute (planned restart for monitoring)
 System Uptime: 99.98%
 
-=================================================================
+########################################
 ARCHITECTURE COMPARISON PARAMETERS
-=================================================================
+########################################
 
 Each architecture was tested with identical parameters:
 
@@ -182,9 +182,9 @@ Test Consistency:
 - Same anomaly injection (seed=42)
 - Same monitoring setup
 
-=================================================================
+########################################
 REPRODUCIBILITY
-=================================================================
+########################################
 
 To reproduce this test:
 
@@ -201,6 +201,6 @@ Expected Results:
 - Zero data loss
 - Throughput: 1,000 events/s sustained
 
-=================================================================
+########################################
 END OF TEST PARAMETERS
-=================================================================
+########################################

@@ -1,14 +1,14 @@
-=================================================================
+########################################
 APACHE KAFKA CONFIGURATION - HEALTHCONNECT
-=================================================================
+########################################
 
 Kafka Version: 3.3.1
 Cluster Size: 3 brokers
 ZooKeeper Ensemble: 3 nodes
 
-=================================================================
+########################################
 BROKER CONFIGURATION
-=================================================================
+########################################
 
 # Broker IDs
 broker.id=0  # (1, 2 for other brokers)
@@ -59,9 +59,9 @@ auto.create.topics.enable=false
 # Group Coordination
 group.initial.rebalance.delay.ms=3000
 
-=================================================================
+########################################
 TOPIC CONFIGURATION - vital-signs-raw
-=================================================================
+########################################
 
 Topic Name: vital-signs-raw
 Partitions: 6
@@ -75,9 +75,9 @@ Partition Strategy: Hash by patient_id
 Expected Throughput: 1,000 messages/second (sustained)
 Peak Throughput: 5,000 messages/second
 
-=================================================================
+########################################
 TOPIC CONFIGURATION - vital-signs-processed
-=================================================================
+########################################
 
 Topic Name: vital-signs-processed
 Partitions: 3
@@ -89,9 +89,9 @@ Compression: snappy
 
 Consumer Groups: spark-streaming-consumers
 
-=================================================================
+########################################
 TOPIC CONFIGURATION - anomaly-alerts
-=================================================================
+########################################
 
 Topic Name: anomaly-alerts
 Partitions: 3
@@ -103,9 +103,9 @@ Compression: snappy
 
 Alert Rate: ~50 alerts/second (5% of 1000 events/s)
 
-=================================================================
+########################################
 PRODUCER CONFIGURATION
-=================================================================
+########################################
 
 bootstrap.servers=kafka-broker-0:9092,kafka-broker-1:9092,kafka-broker-2:9092
 acks=all  # Wait for all in-sync replicas
@@ -119,9 +119,9 @@ buffer.memory=33554432
 # Idempotence for exactly-once semantics
 enable.idempotence=true
 
-=================================================================
+########################################
 CONSUMER CONFIGURATION
-=================================================================
+########################################
 
 bootstrap.servers=kafka-broker-0:9092,kafka-broker-1:9092,kafka-broker-2:9092
 group.id=spark-streaming-consumers
@@ -131,9 +131,9 @@ max.poll.records=1000
 fetch.min.bytes=1
 fetch.max.wait.ms=500
 
-=================================================================
+########################################
 MONITORING & JMX METRICS
-=================================================================
+########################################
 
 JMX Port: 9999
 Metrics Reporters: Prometheus JMX Exporter
@@ -145,9 +145,9 @@ Key Metrics Monitored:
 - kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs
 - kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions
 
-=================================================================
+########################################
 SECURITY CONFIGURATION (Production)
-=================================================================
+########################################
 
 # SSL/TLS
 ssl.keystore.location=/etc/kafka/ssl/kafka.server.keystore.jks
@@ -161,9 +161,9 @@ ssl.client.auth=required
 sasl.enabled.mechanisms=SCRAM-SHA-256
 sasl.mechanism.inter.broker.protocol=SCRAM-SHA-256
 
-=================================================================
+########################################
 PERFORMANCE RESULTS
-=================================================================
+########################################
 
 Achieved Throughput: 500,000 events/second (burst)
 Sustained Throughput: 1,000 events/second (12 hours)
@@ -171,6 +171,6 @@ Mean Latency: 12ms (Kafka broker processing only)
 P99 Latency: 45ms
 Zero Data Loss: Yes (acks=all, min.insync.replicas=2)
 
-=================================================================
+########################################
 END OF KAFKA CONFIGURATION
-=================================================================
+########################################

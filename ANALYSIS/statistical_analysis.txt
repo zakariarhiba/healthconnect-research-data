@@ -1,16 +1,12 @@
-=================================================================
-STATISTICAL ANALYSIS - HEALTHCONNECT ARCHITECTURE COMPARISON
-=================================================================
-
+########################################STATISTICAL ANALYSIS - HEALTHCONNECT ARCHITECTURE COMPARISON
+########################################
 Analysis Date: January 11, 2026
 Analyst: RHIBA Zakaria
 Sample Size: 100,000 events per architecture (sampled from 43.2M)
 Statistical Software: Python (SciPy 1.9.3, statsmodels 0.13.5)
 
-=================================================================
-RESEARCH HYPOTHESIS
-=================================================================
-
+########################################RESEARCH HYPOTHESIS
+########################################
 Null Hypothesis (H0):
 There is no significant difference in mean latency among the four
 architectures (HTTP, MQTT, CoAP, Lambda).
@@ -21,10 +17,8 @@ compared to others.
 
 Significance Level: α = 0.05
 
-=================================================================
-DESCRIPTIVE STATISTICS
-=================================================================
-
+########################################DESCRIPTIVE STATISTICS
+########################################
 LAMBDA ARCHITECTURE
 - Mean Latency: 185 ms
 - Median (P50): 165 ms
@@ -65,10 +59,8 @@ HTTP ARCHITECTURE
 - Max: 3500 ms
 - n = 100,000
 
-=================================================================
-NORMALITY TESTS
-=================================================================
-
+########################################NORMALITY TESTS
+########################################
 Shapiro-Wilk Test (for normality):
 
 Lambda: W = 0.9892, p-value < 0.001 (reject normality)
@@ -80,10 +72,8 @@ Conclusion: All distributions deviate from normality (expected for
 latency data). However, with large sample sizes (n=100,000 each),
 the Central Limit Theorem ensures ANOVA is robust to violations.
 
-=================================================================
-ONE-WAY ANOVA (ANALYSIS OF VARIANCE)
-=================================================================
-
+########################################ONE-WAY ANOVA (ANALYSIS OF VARIANCE)
+########################################
 Test: One-Way ANOVA comparing mean latencies across 4 architectures
 
 Results:
@@ -100,10 +90,8 @@ Effect Size (Eta-squared):
 Interpretation: Architecture type explains 25.3% of the variance
 in latency (large effect size).
 
-=================================================================
-POST-HOC ANALYSIS: TUKEY HSD TEST
-=================================================================
-
+########################################POST-HOC ANALYSIS: TUKEY HSD TEST
+########################################
 Pairwise comparisons with Tukey's Honestly Significant Difference:
 
 LAMBDA vs. MQTT:
@@ -148,10 +136,8 @@ COAP vs. HTTP:
 Conclusion: ALL pairwise comparisons are statistically significant
 (p < 0.001). Lambda architecture significantly outperforms all others.
 
-=================================================================
-NON-PARAMETRIC TEST: KRUSKAL-WALLIS H TEST
-=================================================================
-
+########################################NON-PARAMETRIC TEST: KRUSKAL-WALLIS H TEST
+########################################
 Since data violates normality, we also performed a non-parametric test:
 
 Kruskal-Wallis H Test:
@@ -161,10 +147,8 @@ p-value: < 0.001
 Conclusion: Consistent with ANOVA, there are significant differences
 in latency distributions across architectures.
 
-=================================================================
-CONFIDENCE INTERVALS (95%)
-=================================================================
-
+########################################CONFIDENCE INTERVALS (95%)
+########################################
 Lambda: [183.4, 186.6] ms
 MQTT:   [418.3, 421.7] ms
 CoAP:   [507.8, 512.2] ms
@@ -173,10 +157,8 @@ HTTP:   [777.2, 782.8] ms
 Interpretation: The 95% confidence intervals do NOT overlap,
 confirming statistically distinct performance tiers.
 
-=================================================================
-CLINICAL SIGNIFICANCE
-=================================================================
-
+########################################CLINICAL SIGNIFICANCE
+########################################
 Statistical significance does NOT always imply clinical significance.
 However, in telemedicine:
 
@@ -193,10 +175,8 @@ For sepsis detection (critical use case):
 Every 100ms delay increases mortality risk.
 Lambda's 595ms advantage over HTTP is CLINICALLY SIGNIFICANT.
 
-=================================================================
-DATA LOSS ANALYSIS
-=================================================================
-
+########################################DATA LOSS ANALYSIS
+########################################
 Chi-Square Test for Data Loss Rates:
 
 Observed Data Loss:
@@ -210,10 +190,8 @@ Chi-Square: χ²(3) = 9234.8, p < 0.001
 Conclusion: Lambda's zero data loss is statistically and clinically
 superior to all alternatives.
 
-=================================================================
-THROUGHPUT ANALYSIS
-=================================================================
-
+########################################THROUGHPUT ANALYSIS
+########################################
 Mean Throughput (events/second):
 
 Lambda: 500,000 ± 12,000
@@ -227,10 +205,8 @@ F(3, 1436) = 156780.3, p < 0.001
 Conclusion: Lambda achieves 10-500× higher throughput than
 alternatives (p < 0.001).
 
-=================================================================
-REGRESSION ANALYSIS
-=================================================================
-
+########################################REGRESSION ANALYSIS
+########################################
 Multiple Linear Regression:
 Latency = β₀ + β₁(Architecture) + β₂(Load) + β₃(Time_of_Day) + ε
 
@@ -241,10 +217,8 @@ Results:
 
 R² = 0.387 (architecture explains 38.7% of latency variance)
 
-=================================================================
-ASSUMPTIONS VALIDATION
-=================================================================
-
+########################################ASSUMPTIONS VALIDATION
+########################################
 1. Independence: ✓ (events are independent)
 2. Normality: ✗ (violated, but CLT applies with large n)
 3. Homogeneity of Variance (Levene's Test):
@@ -253,10 +227,8 @@ ASSUMPTIONS VALIDATION
    - Welch's ANOVA also performed: F(3, 178234) = 43892.1, p < 0.001
    - Conclusion: Results are robust to heteroscedasticity
 
-=================================================================
-SENSITIVITY ANALYSIS
-=================================================================
-
+########################################SENSITIVITY ANALYSIS
+########################################
 Bootstrap Resampling (10,000 iterations):
 
 Lambda Mean Latency:
@@ -266,10 +238,8 @@ Lambda Mean Latency:
 
 Conclusion: Results are stable and not sensitive to sampling variation.
 
-=================================================================
-FINAL STATISTICAL CONCLUSIONS
-=================================================================
-
+########################################FINAL STATISTICAL CONCLUSIONS
+########################################
 1. Lambda architecture has SIGNIFICANTLY lower latency than all
    alternatives (p < 0.001, very large effect sizes).
 
@@ -283,10 +253,8 @@ FINAL STATISTICAL CONCLUSIONS
 
 4. Confidence: >99.9% that Lambda is superior for this use case.
 
-=================================================================
-RECOMMENDATIONS
-=================================================================
-
+########################################RECOMMENDATIONS
+########################################
 Based on rigorous statistical analysis:
 
 RECOMMENDED: Lambda Architecture
@@ -300,6 +268,5 @@ BORDERLINE: MQTT
 Rationale: May suffice for small-scale deployments (<50K devices),
 but lacks batch analytics and has 0.8% data loss.
 
-=================================================================
-END OF STATISTICAL ANALYSIS
-=================================================================
+########################################END OF STATISTICAL ANALYSIS
+########################################
